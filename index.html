@@ -210,17 +210,17 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "</br>" +
         English[randomEnglsih];
 
-      var audioHe = new Video();
+      var audioHe = new Audio();
       audioHe.src =
         "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
-        Hebrew[randomEnglsih] +
+        Translation[randomEnglsih] +
         "&tl=he";
       audioHe.play();
       audioHe.addEventListener(
         "ended",
         function () {
           this.currentTime = 0;
-          var audioEn = new Video();
+          var audioEn = new Audio();
           audioEn.src =
             "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
             English[randomEnglsih] +
