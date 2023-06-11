@@ -189,18 +189,7 @@ const input = document.getElementById("input");
 const playButton = document.getElementById("play");
 
 
-playButton.addEventListener("click", function() {
-    if (input.value.length) {
-        let inputVal = "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
-        Hebrew[randomEnglsih] +
-        "&tl=he";
-        var player = new Audio(inputVal);
-        player.crossOrigin = "anonymous";
-        player.addEventListener("canplaythrough", function() {
-            player.play();
-        })
-    }
-})
+
     
     var English = [];
     var Translation = [];
@@ -238,6 +227,18 @@ playButton.addEventListener("click", function() {
         Hebrew[randomEnglsih] +
         "&tl=he";
 
+      playButton.addEventListener("click", function() {
+    if (input.value.length) {
+        let inputVal = "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
+        Hebrew[randomEnglsih] +
+        "&tl=he";
+        var player = new Audio(inputVal);
+        player.crossOrigin = "anonymous";
+        player.addEventListener("canplaythrough", function() {
+            player.play();
+        })
+    }
+})
       audioHe.addEventListener(
         "ended",
         function () {
