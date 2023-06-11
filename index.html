@@ -184,7 +184,8 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
 
   </body>
   <script>
-    
+    var corsAttr = new EnableCorsAttribute("*", "*", "*");
+config.EnableCors(corsAttr);
 const input = document.getElementById("input");
 const playButton = document.getElementById("play");
 
