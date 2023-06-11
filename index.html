@@ -182,6 +182,11 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
 
   </body>
   <script>
+    
+          function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }
     var English = [];
     var Translation = [];
     var Hebrew = [];
@@ -217,10 +222,7 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
         Hebrew[randomEnglsih] +
         "&tl=he";
-      function play() {
-        var audio = document.getElementById("audio");
-        audio.play();
-      }
+
       audioHe.addEventListener(
         "ended",
         function () {
