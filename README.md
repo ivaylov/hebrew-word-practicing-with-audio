@@ -1,3 +1,3 @@
-# hebrew-word-practicing
+# hebrew-word-practicing-with-audio
 
-https://ivaylov.github.io/hebrew-word-practicing/
+https://ivaylov.github.io/hebrew-word-practicing-with-audio/
