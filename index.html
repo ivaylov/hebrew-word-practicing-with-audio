@@ -176,8 +176,8 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         background-image: url('logo.png');
         background-position-x: center;
         background-repeat: no-repeat;
-      "
-    ></div><video autoplay="" muted="" playsinline=""></video>
+      " onclick="audioHe.play()"
+    ></div>
   </body>
   <script>
     var English = [];
@@ -215,12 +215,6 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
         Hebrew[randomEnglsih] +
         "&tl=he";
-      
-      
-         var playPromise = audioHe.play();
-
-      
-      
       
       audioHe.addEventListener(
         "ended",
