@@ -221,8 +221,10 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       
       import sound from "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
         Hebrew[randomEnglsih] +
-        "&tl=he":
-      const audio = new Audio(sound)
+        "&tl=he";
+      const audio = new Audio(sound);
+              audio.muted = true;
+
       audio.play();
       
       
