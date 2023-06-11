@@ -177,8 +177,10 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         background-position-x: center;
         background-repeat: no-repeat;
       " onclick="audioHe.play()"
-    ></div>    <input type="button" value="PLAY" onclick="audioHe.play();">
-
+    ></div>    <input type="button" value="PLAY" onclick="play()">
+    <audio id="audio" src="http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
+        Hebrew[randomEnglsih] +
+        "&tl=he"></audio>
   </body>
   <script>
     var English = [];
@@ -216,7 +218,10 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
         Hebrew[randomEnglsih] +
         "&tl=he";
-      
+      function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }
       audioHe.addEventListener(
         "ended",
         function () {
