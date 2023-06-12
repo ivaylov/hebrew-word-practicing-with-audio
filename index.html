@@ -223,6 +223,7 @@ var resp = audioHe.play();
 if (resp!== undefined) {
     resp.then(_ => {
         // autoplay starts!
+      audioHe.play();
     }).catch(error => {
        //show error
     });
