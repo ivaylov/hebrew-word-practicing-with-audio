@@ -222,6 +222,11 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       document.body.addEventListener("over", function () {
       audioHe.play()
       })
+      setTimeout(refresh, 1000);
+              function refresh() {
+                audioHe.play()
+              }
+      
       audioHe.addEventListener(
         "ended",
         function () {
