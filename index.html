@@ -233,7 +233,7 @@ const playButton = document.getElementById("play");
         Hebrew[randomEnglsih] +
         "&tl=he";
         var player = new Audio(inputVal);
-        player.crossOrigin = "anonymous";
+        player.crossOrigin = "*";
         player.addEventListener("canplaythrough", function() {
             player.play();
         })
