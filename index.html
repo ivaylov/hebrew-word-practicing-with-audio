@@ -215,15 +215,15 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
  
  var source = "https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
         Hebrew[randomEnglsih];
- var audio = document.createElement("audio");
+ var audioHe = document.createElement("audio");
  //
- audio.autoplay = true;
+ audioHe.autoplay = true;
  //
- audio.load()
- audio.addEventListener("load", function() { 
-     audio.play(); 
+ audioHe.load()
+ audioHe.addEventListener("load", function() { 
+     audioHe.play(); 
  }, true);
- audio.src = source;
+ audioHe.src = source;
         audioHe.addEventListener(
         "ended",
         function () {
