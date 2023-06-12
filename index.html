@@ -176,18 +176,10 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         background-image: url('logo.png');
         background-position-x: center;
         background-repeat: no-repeat;
-      " onclick="audioHe.play()"
-    ></div>    
-    
-<audio id="Audio"></audio>
-
-<button onclick="playAudio()" type="button">Play Audio</button>
-<button onclick="pauseAudio()" type="button">Pause Audio</button>
-
-
+      "
+    ></div>
   </body>
   <script>
-
     var English = [];
     var Translation = [];
     var Hebrew = [];
@@ -223,28 +215,7 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
         Hebrew[randomEnglsih] +
         "&tl=he";
-
-let audio = document.querySelector('#Audio');
-
-function playAudio() { 
-  audio.play(); 
-} 
-
-function pauseAudio() { 
-  audio.pause(); 
-} 
-
-$.ajax({
-  url: "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
-        Hebrew[randomEnglsih] +
-        "&tl=he",
-  success: (res) => {
-    audio.srcObject = URL.createObjectURL(res);
-  },
-  error: (err) => {
-    console.error('CORS Error. See browser console for detail.');
-  }
-});
+      audioHe.play();
       audioHe.addEventListener(
         "ended",
         function () {
