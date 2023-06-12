@@ -181,20 +181,10 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
     <audio controls id="player" preload="auto" autoplay  src="https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=hi&tl=he"></audio>
 
   </body>
-  <script>
-window.onload = function() {
-  var context = new AudioContext();
-context.src ="http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=hi&tl=he";
-
-document.querySelector('button').addEventListener('click', function() {
-  context.resume().then(() => {
-    console.log('Playback resumed successfully');
-  });
-
-    
-    
-    
-    
+  <script>    
+    var context = new AudioContext();
+    context.src ="http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=hi&tl=he";
+    context.play();
     
     
     
