@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="referrer" content="no-referrer">
+    <meta name="referrer" content="no-referrer" />
     <title>Hebrew word practicing with audio</title>
     <link
       rel="shortcut icon"
@@ -153,6 +153,7 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
     />
     <script type="text/JavaScript" src="jquery.min.js"></script>
   </head>
+
   <body>
     <div
       id="practice"
@@ -180,7 +181,7 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       "
     ></div>
   </body>
-  <script>    
+  <script>
     var English = [];
     var Translation = [];
     var Hebrew = [];
@@ -202,9 +203,9 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         Translation.push(values[1]);
         Hebrew.push(values[2]);
       }
-      
-      function newPractice(){
+
       var randomEnglsih = Math.floor(Math.random() * English.length);
+
       document.getElementById("practice").innerHTML =
         "{ " +
         Translation[randomEnglsih] +
@@ -212,31 +213,32 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         Hebrew[randomEnglsih] +
         "</br>" +
         English[randomEnglsih];
-        
-        
-        var audioHe = document.createElement("AUDIO")
+
+      var audioHe = document.createElement("AUDIO");
       document.body.appendChild(audioHe);
-      audioHe.src ="https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
+      audioHe.src =
+        "https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
         Hebrew[randomEnglsih];
-      
+
       document.querySelector("AUDIO").play();
 
-let playAttempt = setInterval(() => {
-  audioHe
-    .play()
-    .then(() => {
-      clearInterval(playAttempt);
-    })
-    .catch((error) => {
-      console.log("Unable to play the video, User has not interacted yet.");
-    });
-}, 1000);
+      let playAttempt = setInterval(() => {
+        audioHe
+          .play()
+          .then(() => {
+            clearInterval(playAttempt);
+          })
+          .catch((error) => {
+            console.log(
+              "Unable to play the video, User has not interacted yet."
+            );
+          });
+      }, 1000);
       document.body.addEventListener("click", function () {
-      audioHe.play()
-      })
-      
-        
-               audioHe.addEventListener(
+        audioHe.play();
+      });
+
+      audioHe.addEventListener(
         "ended",
         function () {
           this.currentTime = 0;
@@ -251,9 +253,10 @@ let playAttempt = setInterval(() => {
               this.currentTime = 0;
               setTimeout(refresh, 7000);
               function refresh() {
-                //location.reload();
-                 newPractice();
-                console.log("newPractice");
+                audioHe.src = "";
+                audioEn.src = "";
+                practice(data);
+                console.log("new practice");
               }
             },
             false
@@ -261,16 +264,6 @@ let playAttempt = setInterval(() => {
         },
         false
       );
-        
-        
-        
-        
-        
-        
-        
-      }
-
- 
     }
   </script>
 </html>
