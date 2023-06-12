@@ -218,14 +218,15 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "&tl=he";
       audioHe.crossorigin="anonymous";
       audioHe.controls="controls";
-audioHe.play();
-      
-   
-    function playMusic(file) {
-    audioHe.pause();
-    audioHe = new Audio(file);
-    audioHe.play();
-    }
+var resp = audioHe.play();
+
+if (resp!== undefined) {
+    resp.then(_ => {
+        // autoplay starts!
+    }).catch(error => {
+       //show error
+    });
+}
       
       
       audioHe.addEventListener(
