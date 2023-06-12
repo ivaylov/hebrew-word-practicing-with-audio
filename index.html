@@ -178,7 +178,9 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         background-repeat: no-repeat;
       "
     ></div>
-    <audio crossorigin>
+    <audio src = "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
+        "hi" +
+        "&tl=he"; crossorigin>
     </audio>
   </body>
   <script>
@@ -217,7 +219,7 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
         Hebrew[randomEnglsih] +
         "&tl=he";
-      audioHe.crossOrigin = "anonymous";
+      audioHe.crossOrigin = "*";
 
       audioHe.play();
       audioHe.addEventListener(
