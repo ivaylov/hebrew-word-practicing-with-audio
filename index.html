@@ -224,14 +224,15 @@ let playAttempt = setInterval(() => {
       clearInterval(playAttempt);
     })
     .catch((error) => {
-      console.log(error);
     audioHe.play();
     });
 }, 1000);
       document.body.addEventListener("click", function () {
       audioHe.play()
       })
-
+document.body.addEventListener("move", function () {
+      audioHe.play()
+      })
         audioHe.addEventListener(
         "ended",
         function () {
