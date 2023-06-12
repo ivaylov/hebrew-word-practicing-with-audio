@@ -219,6 +219,15 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       audioHe.crossOrigin = "anonymous";
       audioHe.controls="controls";
       audioHe.play();
+      
+   
+    function playMusic(file) {
+    audioHe.pause();
+    audioHe = new Audio(file);
+    audioHe.play();
+    }
+      
+      
       audioHe.addEventListener(
         "ended",
         function () {
