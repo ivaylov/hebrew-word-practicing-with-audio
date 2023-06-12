@@ -225,6 +225,8 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
   const promise = audioHe.play();
     if(promise !== undefined){
         promise.then(() => {
+                      audioHe.play();
+
             // Autoplay started
         }).catch(error => {
             // Autoplay was prevented.
