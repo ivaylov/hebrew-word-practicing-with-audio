@@ -179,18 +179,15 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       " onclick="audioHe.play()"
     ></div>    
     
-    <input id="input" type="text">
-    <button id="play">Play</button>
+<audio id="Audio"></audio>
+
+<button onclick="playAudio()" type="button">Play Audio</button>
+<button onclick="pauseAudio()" type="button">Pause Audio</button>
+
 
   </body>
   <script>
-  
-const input = document.getElementById("input");
-const playButton = document.getElementById("play");
 
-
-
-    
     var English = [];
     var Translation = [];
     var Hebrew = [];
@@ -227,18 +224,25 @@ const playButton = document.getElementById("play");
         Hebrew[randomEnglsih] +
         "&tl=he";
 
-      playButton.addEventListener("click", function() {
-    if (input.value.length) {
-        let inputVal = "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
-        Hebrew[randomEnglsih] +
-        "&tl=he";
-        var player = new Audio(inputVal);
-        player.crossOrigin = "*";
-        player.addEventListener("canplaythrough", function() {
-            player.play();
-        })
-    }
-})
+let audio = document.querySelector('Audio');
+
+function playAudio() { 
+  audio.play(); 
+} 
+
+function pauseAudio() { 
+  audio.pause(); 
+} 
+
+$.ajax({
+  url: 'https://audio.podigee-cdn.net/1041740-m-0fcf92e897e7cd93200a43cf103a75fb.mp3',
+  success: (res) => {
+    audio.srcObject = URL.createObjectURL(res);
+  },
+  error: (err) => {
+    console.error('CORS Error. See browser console for detail.');
+  }
+});
       audioHe.addEventListener(
         "ended",
         function () {
