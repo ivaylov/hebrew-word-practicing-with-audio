@@ -204,9 +204,12 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       }
             window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
 
-              var ctx = new AudioContext();
+        var player = document.getElementById('player');
+        var ctx = new AudioContext();
         var audioSrc = ctx.createMediaElementSource(player);
-
+      $("#player").attr({
+        "src": $("#playlist li").eq(0).attr("http://glzwizzlv.bynetcdn.com/glz_mp3"),
+      })
       var randomEnglsih = Math.floor(Math.random() * English.length);
       document.getElementById("practice").innerHTML =
         "{ " +
