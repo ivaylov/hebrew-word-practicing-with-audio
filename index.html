@@ -249,9 +249,9 @@ let playAttempt = setInterval(() => {
             "ended",
             function () {
               this.currentTime = 0;
-               audioHe.play();
               setTimeout(refresh, 7000);
               function refresh() {
+                audioHe.play();
                 location.reload();
               }
             },
