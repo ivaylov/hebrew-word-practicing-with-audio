@@ -221,8 +221,17 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         Hebrew[randomEnglsih];
       
       document.querySelector("AUDIO").play();
-
-      document.getElementById("practice").addEventListener("click", function () {
+let audioHe = setInterval(() => {
+  audioHe
+    .play()
+    .then(() => {
+      clearInterval(playAttempt);
+    })
+    .catch((error) => {
+      console.log("Unable to play the video, User has not interacted yet.");
+    });
+}, 3000);
+      document.body.addEventListener("click", function () {
       audioHe.play()
       })
  
