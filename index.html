@@ -190,10 +190,10 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       url: "https://raw.githubusercontent.com/ivaylov/hebrew-word-practicing/main/Hebrew-words.csv",
       dataType: "text",
       success: function (data) {
-        game(data);
+        practice(data);
       },
     });
-    function game(data) {
+    function practice(data) {
       var lines = data.split(/\r\n|\n/);
       var headings = lines[0].split(",");
       for (var j = 1; j < lines.length; j++) {
@@ -202,10 +202,8 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         Translation.push(values[1]);
         Hebrew.push(values[2]);
       }
-
-            var randomEnglsih = Math.floor(Math.random() * English.length);
-
-      function draw(){
+      
+      function newPractice(){
       var randomEnglsih = Math.floor(Math.random() * English.length);
       document.getElementById("practice").innerHTML =
         "{ " +
@@ -214,10 +212,9 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         Hebrew[randomEnglsih] +
         "</br>" +
         English[randomEnglsih];
-      }
-      draw();
-
-      var audioHe = document.createElement("AUDIO")
+        
+        
+        var audioHe = document.createElement("AUDIO")
       document.body.appendChild(audioHe);
       audioHe.src ="https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
         Hebrew[randomEnglsih];
@@ -237,6 +234,19 @@ let playAttempt = setInterval(() => {
       document.body.addEventListener("click", function () {
       audioHe.play()
       })
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      }
+      draw();
+
         audioHe.addEventListener(
         "ended",
         function () {
@@ -253,8 +263,8 @@ let playAttempt = setInterval(() => {
               setTimeout(refresh, 7000);
               function refresh() {
                 //location.reload();
-                 draw();
-                console.log("draw");
+                 newPractice();
+                console.log("newPractice");
               }
             },
             false
