@@ -249,7 +249,9 @@ let playAttempt = setInterval(() => {
               this.currentTime = 0;
               setTimeout(refresh, 7000);
               function refresh() {
-                location.reload();
+                //location.reload();
+                      var randomEnglsih = Math.floor(Math.random() * English.length);
+
               }
             },
             false
