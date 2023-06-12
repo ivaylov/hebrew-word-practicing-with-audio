@@ -204,6 +204,7 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       }
 
       var randomEnglsih = Math.floor(Math.random() * English.length);
+      fucntion draw(){
       document.getElementById("practice").innerHTML =
         "{ " +
         Translation[randomEnglsih] +
@@ -211,8 +212,8 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         Hebrew[randomEnglsih] +
         "</br>" +
         English[randomEnglsih];
-
- 
+      }
+      draw();
 
       var audioHe = document.createElement("AUDIO")
       document.body.appendChild(audioHe);
@@ -251,7 +252,7 @@ let playAttempt = setInterval(() => {
               function refresh() {
                 //location.reload();
                       var randomEnglsih = Math.floor(Math.random() * English.length);
-
+                      draw();
               }
             },
             false
