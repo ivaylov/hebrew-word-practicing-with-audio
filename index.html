@@ -204,6 +204,8 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         Translation.push(values[1]);
         Hebrew.push(values[2]);
       }
+            window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
+
       var randomEnglsih = Math.floor(Math.random() * English.length);
       document.getElementById("practice").innerHTML =
         "{ " +
