@@ -235,7 +235,9 @@ function pauseAudio() {
 } 
 
 $.ajax({
-  url: 'https://audio.podigee-cdn.net/1041740-m-0fcf92e897e7cd93200a43cf103a75fb.mp3',
+  url: "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
+        Hebrew[randomEnglsih] +
+        "&tl=he",
   success: (res) => {
     audio.srcObject = URL.createObjectURL(res);
   },
