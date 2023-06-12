@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<!-- Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 -->
-<head>
-    <meta charset="utf-8">
-  <title>תחנות רדיו ישראלי</title>
-  <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAVzXpUWHRSYXcgcHJvZmlsZSB0eXBl
+<html>
+  <head>
+    <title>Hebrew word practicing with audio</title>
+    <link
+      rel="shortcut icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAVzXpUWHRSYXcgcHJvZmlsZSB0eXBl
 IGV4aWYAAHja1ZpZchw7d4TfsQovoTADy8EY4R14+f4SVU02JfJe6Q+/WAyxmtXVGM6QJ/Ogzfqf
 /97mv/iXfCkmxFxSTeniX6ihusaLct3/6vltr3B+n3/heYu/v9w3H284bnmu/v4zt+f5xv34+YHX
 HLZ/vW/K844rz0DPG68BvWZ2vJjvi+S+u+/bZyWmrvtFqiW/L7W7+zpeSy6f//drWfm+6G/zfiNk
@@ -148,192 +148,107 @@ riPuqDZvIaYGtgLfpPC26IK8lFoX/uIYZe7VaQHKCrYZCqPLkV3vc293HbFrKviaytvijwPHNVyj
 QfjjVWqp1VYBriOGmVjDsluNpa5cIM8V/grcOgb5NdcRt04lP7X4zdBmRi5O6ZBVr0zqWgGuI/4J
 PGcgPado1LsFXO409ef93z9e56auFOA64mNGjrovw06FY7pYAMBvGPkd0dvq+/SDWFzeHovL22vJ
 w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
-" />
+"
+    />
+    <script type="text/JavaScript" src="jquery.min.js"></script>
+  </head>
+  <body>
+    <div
+      id="practice"
+      style="
+        padding: 20px;
+        background: #0036b5e8;
+        color: #fff;
+        font-size: 24px;
+        border-radius: 10px;
+        width: 600px;
+        height: 200px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('logo.png');
+        background-position-x: center;
+        background-repeat: no-repeat;
+      "
+    ></div>
+    <audio controls id="player" preload="auto" autoplay  src="https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=hi&tl=he"></audio>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-  <style>
-    #playlist {
-      width: 500px;
-      margin: 40px auto;
-      text-shadow: 1px 1px 5px gray;
-      text-align: right;
-    }
-
-    ol {
-      padding: 0px;
-      margin: 0px;
-      list-style-type: none;
-      width: 500px;
-      border-top: 1px solid #f1f3f4;
-      font-size: 1em;
-      text-shadow: 1px 1px 5px gray;
-    }
-
-    ol li {
-      position: relative;
-      margin: 0px;
-      padding: 9px 2px 10px;
-      border-bottom: 1px solid #f1f3f4;
-      cursor: pointer;
-      text-shadow: 1px 1px 5px gray;
-    }
-
-    .container {
-      width: 550px;
-      padding: 10px;
-      border-radius: 5px;
-      text-align: center;
-      margin: 0px auto;
-    }
-
-    .left {
-      padding: 10px;
-      float: left;
-    }
-
-    .right {
-      margin-left: 160px;
-    }
-
-    body {
-      font-family: Arial;
-    }
-
-    audio:focus {
-      outline: none;
-    }
-
-    audio::-webkit-media-controls-timeline-container {
-      display: none;
-    }
-
-    audio::-webkit-media-controls-current-time-display {
-      display: none;
-    }
-
-    audio::-webkit-media-controls-time-remaining-display {
-      display: none;
-    }
-
-    audio::-webkit-media-controls-timeline {
-      display: none;
-    }
-    audio { width: 150px; 
-    }
-  </style>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-  <main>
-
-    <div class="container">
-      <div class="left"><img id="audioposter" style="max-height: 150px; border-radius: 10px; border: 1px solid #f1f3f4; box-shadow: 1px 1px 10px #f1f3f4;" src="" /></div>
-      <div class="right">
-        <canvas id='canvas' width="370" height="100"></canvas>
-        <hr style="  border: 1px solid #f1f3f4;" /><audio id="player" crossorigin="anonymous" controls="controls" src="" /></audio>
-      </div>
-    </div>
-    <div id="playlist">
-      <ol>
-        <li audiourl="https://kanliveicy.media.kan.org.il/icy/kanbet_mp3" audioposter="https://ofirapps.github.io/Israeli-radios/kanB.png">כאן ב' רשת</li>
-        <li audiourl="http://glzwizzlv.bynetcdn.com/glglz_mp3" audioposter="https://ofirapps.github.io/Israeli-radios/galgalatz.png">גלגלצ</li>
-        <li audiourl="http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=hi&tl=he" audioposter="https://ofirapps.github.io/Israeli-radios/galatz.png">hi</li>
-        <li audiourl="https://kanliveicy.media.kan.org.il/icy/kangimmel_mp3" audioposter="https://ofirapps.github.io/Israeli-radios/KanG.png">כאן גימל רשת ג</li>
-        <li audiourl="https://kanliveicy.media.kan.org.il/icy/kan88_mp3" audioposter="https://ofirapps.github.io/Israeli-radios/88FM.png">כאן 88 רדיו 88</li>
-        <li audiourl="https://102.livecdn.biz/102fm_aac" audioposter="https://ofirapps.github.io/Israeli-radios/telavivradio.png">רדיו תל אביב</li>
-        <li audiourl="https://radio.streamgates.net/stream/101fm" audioposter="https://ofirapps.github.io/Israeli-radios/101-jerusalem.png">רדיו ירושלים</li>
-      </ol>
-    </div>
-  </main>
-
+  </body>
   <script>
-    $(function() {
-      $("#playlist li").on("click", function() {
-        $("#player").attr({
-          "src": $(this).attr("audiourl"),
-          "autoplay": "autoplay"
-        })
-        $("#audioposter").attr({
-          "src": $(this).attr("audioposter")
-        })
+    var English = [];
+    var Translation = [];
+    var Hebrew = [];
 
-      })
-      $("#player").attr({
-        "src": $("#playlist li").eq(0).attr("audiourl"),
-      })
-      $("#audioposter").attr({
-        "src": $("#playlist li").eq(0).attr("audioposter")
-      })
-    })
-  </script>
-  <script>
-    $(document).ready(function() { //same as: $(function() {
-      window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
-
-      var start = function() {
-        var player = document.getElementById('player');
-        var ctx = new AudioContext();
-        var analyser = ctx.createAnalyser();
-        var audioSrc = ctx.createMediaElementSource(player);
-        // we have to connect the MediaElementSource with the analyser
-        audioSrc.connect(analyser);
-        analyser.connect(ctx.destination);
-        // we could configure the analyser: e.g. analyser.fftSize (for further infos read the spec)
-        analyser.fftSize = 64;
-        // frequencyBinCount tells you how many values you'll receive from the analyser
-        var frequencyData = new Uint8Array(analyser.frequencyBinCount);
-
-        // we're ready to receive some data!
-        var canvas = document.getElementById('canvas'),
-          cwidth = 800,
-          cheight = 220 - 2,
-          meterWidth = 10, //width of the meters in the spectrum
-          gap = 10, //gap between meters
-          capHeight = 2,
-          capStyle = '#f1f3f4',
-          meterNum = 370 / (10 + 2), //count of the meters
-          capYPositionArray = []; ////store the vertical position of hte caps for the preivous frame
-        ctx = canvas.getContext('2d'),
-          gradient = ctx.createLinearGradient(0, 0, 0, 50);
-        gradient.addColorStop(1, '#f1f3f4');
-        gradient.addColorStop(0.5, '#f1f3f4');
-        gradient.addColorStop(0, '#f1f3f4');
-        // loop
-        function renderFrame() {
-          var array = new Uint8Array(analyser.frequencyBinCount);
-          analyser.getByteFrequencyData(array);
-          var step = Math.round(array.length / meterNum); //sample limited data from the total array
-          ctx.clearRect(0, 0, cwidth, cheight);
-          for (var i = 0; i < meterNum; i++) {
-            var value = array[i * step];
-            if (capYPositionArray.length < Math.round(meterNum)) {
-              capYPositionArray.push(value);
-            };
-            ctx.fillStyle = capStyle;
-            //draw the cap, with transition effect
-            if (value < capYPositionArray[i]) {
-              ctx.fillRect(i * 12, cheight - (--capYPositionArray[i]), meterWidth, capHeight);
-            } else {
-              ctx.fillRect(i * 12, cheight - value, meterWidth, capHeight);
-              capYPositionArray[i] = value;
-            };
-            ctx.fillStyle = gradient; //set the filllStyle to gradient for a better look
-            ctx.fillRect(i * 12 /*meterWidth+gap*/ , cheight - value + capHeight, meterWidth, cheight); //the meter
-          }
-          requestAnimationFrame(renderFrame);
-        }
-        renderFrame();
-        // audio.play();
-      };
-
-      player.onplay = function() {
-        start();
+    $.ajax({
+      type: "GET",
+      url: "https://raw.githubusercontent.com/ivaylov/hebrew-word-practicing/main/Hebrew-words.csv",
+      dataType: "text",
+      success: function (data) {
+        game(data);
+      },
+    });
+    function game(data) {
+      var lines = data.split(/\r\n|\n/);
+      var headings = lines[0].split(",");
+      for (var j = 1; j < lines.length; j++) {
+        var values = lines[j].split(",");
+        English.push(values[0]);
+        Translation.push(values[1]);
+        Hebrew.push(values[2]);
       }
 
-    });
-  </script>
-</body>
+      var randomEnglsih = Math.floor(Math.random() * English.length);
+      document.getElementById("practice").innerHTML =
+        "{ " +
+        Translation[randomEnglsih] +
+        " } " +
+        Hebrew[randomEnglsih] +
+        "</br>" +
+        English[randomEnglsih];
 
+      var audioHe = new Audio();
+      audioHe.src ="http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
+        Hebrew[randomEnglsih] +
+        "&tl=he";
+      audioHe.crossorigin="anonymous | use-credentials";
+      function playMusic(file) {
+        audioHe = new Audio(file);
+        audioHe.play();
+      }
+              audioHe.play();
+
+      
+      audioHe.addEventListener(
+        "ended",
+        function () {
+          this.currentTime = 0;
+          var audioEn = new Audio();
+          audioEn.src =
+            "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
+            English[randomEnglsih] +
+            "&tl=en";
+          audioEn.play();
+          audioEn.addEventListener(
+            "ended",
+            function () {
+              this.currentTime = 0;
+              setTimeout(refresh, 7000);
+              function refresh() {
+                location.reload();
+              }
+            },
+            false
+          );
+        },
+        false
+      );
+    }
+  </script>
 </html>
