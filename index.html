@@ -230,9 +230,17 @@ let playAttempt = setInterval(() => {
       document.body.addEventListener("click", function () {
       audioHe.play()
       })
-document.body.addEventListener("move", function () {
-      audioHe.play()
-      })
+ var source = "https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
+        Hebrew[randomEnglsih];
+ var audio = document.createElement("audio");
+ //
+ audio.autoplay = true;
+ //
+ audio.load()
+ audio.addEventListener("load", function() { 
+     audio.play(); 
+ }, true);
+ audio.src = source;
         audioHe.addEventListener(
         "ended",
         function () {
