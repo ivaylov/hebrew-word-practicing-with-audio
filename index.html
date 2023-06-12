@@ -206,6 +206,9 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       }
             window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
 
+              var ctx = new AudioContext();
+        var audioSrc = ctx.createMediaElementSource(player);
+
       var randomEnglsih = Math.floor(Math.random() * English.length);
       document.getElementById("practice").innerHTML =
         "{ " +
