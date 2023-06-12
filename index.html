@@ -217,11 +217,12 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         Hebrew[randomEnglsih];
  var audioHe = document.createElement("audio");
  audioHe.autoplay = true;
+ audioHe.src = source;
  audioHe.load()
  audioHe.addEventListener("load", function() { 
      audioHe.play(); 
  }, true);
- audioHe.src = source;
+
       
       $(document).ready(function () {
   console.log("Hello World!");
