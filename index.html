@@ -203,8 +203,9 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         Hebrew.push(values[2]);
       }
 
-      var randomEnglsih = Math.floor(Math.random() * English.length);
+      
       function draw(){
+      var randomEnglsih = Math.floor(Math.random() * English.length);
       document.getElementById("practice").innerHTML =
         "{ " +
         Translation[randomEnglsih] +
@@ -251,7 +252,6 @@ let playAttempt = setInterval(() => {
               setTimeout(refresh, 7000);
               function refresh() {
                 //location.reload();
-                var randomEnglsih = Math.floor(Math.random() * English.length);
                  draw();
               }
             },
