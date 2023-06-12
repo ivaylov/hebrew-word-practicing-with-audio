@@ -234,7 +234,9 @@ let playAttempt = setInterval(() => {
       document.body.addEventListener("click", function () {
       audioHe.play()
       })
- 
+  let vid = document.getElementById("AUDIO");
+   vid.autoplay = true;
+    vid.load();
         audioHe.addEventListener(
         "ended",
         function () {
