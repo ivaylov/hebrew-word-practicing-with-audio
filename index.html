@@ -215,16 +215,12 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "</br>" +
         English[randomEnglsih];
 
-      var audioHe = document.createElement("AUDIO")
+      var audioHe = document.createElement("audioHe")
       document.body.appendChild(audioHe);
       audioHe.src ="https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
         Hebrew[randomEnglsih];
-      function Function() {
-  var x = document.getElementById("AUDIO").autoplay;
-  document.getElementById("AUDIO").innerHTML = x;
-}
-      Function();
-      document.querySelector("AUDIO").play();
+      
+      document.querySelector("audioHe").play();
 let playAttempt = setInterval(() => {
   audioHe
     .play()
