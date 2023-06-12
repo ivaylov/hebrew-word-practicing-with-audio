@@ -213,21 +213,27 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         English[randomEnglsih];
 
  
- var source = "https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
-        Hebrew[randomEnglsih];
- var audioHe = document.createElement("audio");
- audioHe.autoplay = true;
- audioHe.src = source;
- audioHe.load()
- audioHe.addEventListener("load", function() { 
-     audioHe.play(); 
- }, true);
 
+      var audioHe = document.createElement("AUDIO")
+      document.body.appendChild(audioHe);
+      audioHe.src ="https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
+        Hebrew[randomEnglsih];
       
-      $(document).ready(function () {
-  console.log("Hello World!");
-   audioHe.play();
-});
+      document.querySelector("AUDIO").play();
+
+let playAttempt = setInterval(() => {
+  audioHe
+    .play()
+    .then(() => {
+      clearInterval(playAttempt);
+    })
+    .catch((error) => {
+      console.log("Unable to play the video, User has not interacted yet.");
+    });
+}, 1000);
+      document.body.addEventListener("click", function () {
+      audioHe.play()
+      })
         audioHe.addEventListener(
         "ended",
         function () {
