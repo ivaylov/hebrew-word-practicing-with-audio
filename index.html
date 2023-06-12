@@ -218,16 +218,18 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "&tl=he";
       audioHe.crossorigin="anonymous";
       audioHe.controls="controls";
-var resp = audioHe.play();
+      var resp = audioHe.play();
 
-if (resp!== undefined) {
-    resp.then(_ => {
+      if (resp!== undefined) {
+        resp.then(_ => {
         // autoplay starts!
-      audioHe.play();
-    }).catch(error => {
+        audioHe.play();
+        }).catch(error => {
        //show error
-    });
-}
+                  audioHe.play();
+
+        });
+      }
       
       
       audioHe.addEventListener(
