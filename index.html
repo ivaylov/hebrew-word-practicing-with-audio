@@ -1,13 +1,4 @@
 <!DOCTYPE html>
- <?xml version="1.0" encoding="UTF-8"?>
- <CORSConfiguration xmlns="https://translate.google.com/">
-<CORSRule>
-    <AllowedOrigin>*</AllowedOrigin>
-    <AllowedMethod>GET</AllowedMethod>
-    <MaxAgeSeconds>3000</MaxAgeSeconds>
-    <AllowedHeader>*</AllowedHeader>
-</CORSRule>
-</CORSConfiguration>
 <html>
   <head>
     <title>Hebrew word practicing with audio</title>
@@ -187,7 +178,6 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         background-repeat: no-repeat;
       "
     ></div>
-    <audio id="player" crossorigin="anonymous" controls="controls" src="" /></audio>
   </body>
   <script>
     var English = [];
@@ -211,14 +201,7 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         Translation.push(values[1]);
         Hebrew.push(values[2]);
       }
-            window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
 
-        var player = document.getElementById('player');
-        var ctx = new AudioContext();
-        var audioSrc = ctx.createMediaElementSource(player);
-      $("#player").attr({
-        "src": $("#playlist li").eq(0).attr("http://glzwizzlv.bynetcdn.com/glz_mp3"),
-      })
       var randomEnglsih = Math.floor(Math.random() * English.length);
       document.getElementById("practice").innerHTML =
         "{ " +
@@ -234,7 +217,7 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         Hebrew[randomEnglsih] +
         "&tl=he";
       audioHe.crossOrigin = "anonymous";
-audioHe.controls="controls";
+      audioHe.controls="controls";
       audioHe.play();
       audioHe.addEventListener(
         "ended",
