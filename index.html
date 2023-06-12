@@ -214,23 +214,13 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "</br>" +
         English[randomEnglsih];
 
-      var audioHe = new Audio();
-      audioHe.src ="https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
-        Hebrew[randomEnglsih];
-      audioHe.crossorigin="anonymous | use-credentials";
-      audioHe.muted;
-      audioHe.play();
-      function playMusic(file) {
-        audioHe = new Audio(file);
-        audioHe.play();
-      }
-      var audio = document.createElement("AUDIO")
-      document.body.appendChild(audio);
+      var audioHe = document.createElement("AUDIO")
+      document.body.appendChild(audioHe);
       audio.src ="https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
         Hebrew[randomEnglsih];
 
       document.body.addEventListener("click", function () {
-      audio.play()
+      audioHe.play()
       })
       audioHe.addEventListener(
         "ended",
