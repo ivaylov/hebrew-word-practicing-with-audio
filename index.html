@@ -178,7 +178,7 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         background-repeat: no-repeat;
       "
     ></div>
-    <audio controls id="player" preload="auto" autoplay  src=""></audio>
+    <audio controls id="player" preload="auto" autoplay  src="https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=hi&tl=he"></audio>
 
   </body>
   <script>
@@ -214,10 +214,10 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         English[randomEnglsih];
 
       var audioHe = new Audio();
-      audioHe.src =
-        "https://kanliveicy.media.kan.org.il/icy/kangimmel_mp3";
+      audioHe.src ="http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
+        Hebrew[randomEnglsih] +
+        "&tl=he";
       audioHe.crossorigin="anonymous | use-credentials";
-      audioHe.crossorigin="*";
       function playMusic(file) {
         audioHe = new Audio(file);
         audioHe.play();
