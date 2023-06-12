@@ -180,12 +180,6 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
     ></div>
   </body>
   <script>    
-
-    var context1 = new AudioContext();
-      context1.src ="http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=hi&tl=he";
-      context1.resume();
-    
-    
     var English = [];
     var Translation = [];
     var Hebrew = [];
@@ -218,9 +212,8 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         English[randomEnglsih];
 
       var audioHe = new Audio();
-      audioHe.src ="http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
-        Hebrew[randomEnglsih] +
-        "&tl=he";
+      audioHe.src ="https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
+        Hebrew[randomEnglsih];
       audioHe.crossorigin="anonymous | use-credentials";
       function playMusic(file) {
         audioHe = new Audio(file);
