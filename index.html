@@ -241,9 +241,8 @@ let playAttempt = setInterval(() => {
           this.currentTime = 0;
           var audioEn = new Audio();
           audioEn.src =
-            "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" +
-            English[randomEnglsih] +
-            "&tl=en";
+            "https://translate.google.com/translate_tts?ie=UTF-8&tl=en-US&client=tw-ob&q=" +
+            English[randomEnglsih];
           audioEn.play();
           audioEn.addEventListener(
             "ended",
@@ -251,7 +250,6 @@ let playAttempt = setInterval(() => {
               this.currentTime = 0;
               setTimeout(refresh, 7000);
               function refresh() {
-                audioHe.play();
                 location.reload();
               }
             },
