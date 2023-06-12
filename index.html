@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="referrer" content="no-referrer">
     <title>Hebrew word practicing with audio</title>
     <link
       rel="shortcut icon"
@@ -178,8 +179,32 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         background-repeat: no-repeat;
       "
     ></div>
+    
+    <audio controls id="tts-audio"/>
+
+<div> 
+<button onclick="document.getElementById('live').play()" &gt;play=""> 
+live
+</button> 
+</div>
+    
   </body>
   <script>    
+    
+    const playTTS = (text, lang) => {
+   // Get the audio element
+   const audioEl = document.getElementById('tts-audio');
+
+   const url= `https://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&client=tw-ob&q=${text}`;
+
+   // add the sound to the audio element
+   audioEl.src = url;
+
+   //For auto playing the sound
+   audioEl.play();
+};
+    
+    
     var English = [];
     var Translation = [];
     var Hebrew = [];
