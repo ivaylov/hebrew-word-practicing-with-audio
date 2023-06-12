@@ -218,7 +218,7 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       audioHe.crossorigin="*";
       audioHe.controls="controls";
       function playMusic(file) {
-        audioHe.pause();
+        audioHe.mute();
         audioHe = new Audio(file);
         audioHe.play();
       }
