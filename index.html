@@ -219,23 +219,11 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       audioHe.src ="https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
         Hebrew[randomEnglsih];
 
-      document.body.addEventListener("over", function () {
+      document.practice.addEventListener("mouseover", function () {
       audioHe.play()
       })
-  const promise = audioHe.play();
-    if(promise !== undefined){
-        promise.then(() => {
-                      audioHe.play();
-
-            // Autoplay started
-        }).catch(error => {
-            // Autoplay was prevented.
-            
-            audioHe.play();
-        });
-    }
-      
-      audioHe.addEventListener(
+ 
+        audioHe.addEventListener(
         "ended",
         function () {
           this.currentTime = 0;
