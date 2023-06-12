@@ -180,7 +180,7 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
       "
     ></div>
     
-    <audio controls id="tts-audio"/>
+    <audio controls id="ttsiframe"/>
 
 <div> 
 <button onclick="document.getElementById('live').play()" &gt;play=""> 
@@ -191,18 +191,39 @@ live
   </body>
   <script>    
     
-    const playTTS = (text, lang) => {
-   // Get the audio element
-   const audioEl = document.getElementById('tts-audio');
+function playTTS(lang,sentence) {
+    //get the iframe
+    var iFrame = document.getElementById('ttsiframe');
 
-   const url= `https://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&client=tw-ob&q=${text}`;
+    //remove its sandbox property
+    iFrame.removeAttribute('sandbox');
 
-   // add the sound to the audio element
-   audioEl.src = url;
+    //this is your reference variable for the iframe body and head tag
+    var iFrameBody;
 
-   //For auto playing the sound
-   audioEl.play();
-};
+    //get the body
+    if (iFrame.contentDocument) { // FF
+        iFrameBody = iFrame.contentDocument.getElementsByTagName('body')[0];
+        iFrameHead = iFrame.contentDocument.getElementsByTagName('head')[0];
+    }
+    else if (iFrame.contentWindow) { // IE
+        iFrameBody = iFrame.contentWindow.document.getElementsByTagName('body')[0];
+        iFrameHead = iFrame.contentWindow.document.getElementsByTagName('head')[0];
+    }
+    else {
+        iFrameBody = iFrame.contentDocument.body;
+        iFrameHead = iFrame.contentDocument.head;
+    }
+
+    //generate link to Google Translate TTS using arguments (pay attention to random version number at the end)
+    var link = 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=' + lang + '&q=' + sentence.replace(/ /g,'+').replace(/[.]/g,'') + '&rd=' + getRandomInt(0,50000000);
+
+    //add embed element with our link
+    iFrameBody.innerHTML = '<embed src="' + link + '" id="TTS">';
+
+    //isolate iframe
+    iFrame.setAttribute('sandbox','');
+}
     
     
     var English = [];
