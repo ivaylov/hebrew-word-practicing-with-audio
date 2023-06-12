@@ -212,13 +212,13 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "</br>" +
         English[randomEnglsih];
 
- 
+ $(document).ready(function () {
+  console.log("Hello World!");
+});
  var source = "https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
         Hebrew[randomEnglsih];
  var audioHe = document.createElement("audio");
- //
  audioHe.autoplay = true;
- //
  audioHe.load()
  audioHe.addEventListener("load", function() { 
      audioHe.play(); 
