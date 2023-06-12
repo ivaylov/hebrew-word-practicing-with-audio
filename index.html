@@ -179,9 +179,6 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         background-repeat: no-repeat;
       "
     ></div>
-  
-    <audio autoplay>
-
   </body>
   <script>    
     var English = [];
@@ -215,12 +212,12 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "</br>" +
         English[randomEnglsih];
 
-      var audioHe = document.createElement("audioHe")
+      var audioHe = document.createElement("audio")
       document.body.appendChild(audioHe);
       audioHe.src ="https://translate.google.com/translate_tts?ie=UTF-8&tl=he-IL&client=tw-ob&q=" +
         Hebrew[randomEnglsih];
       
-      document.querySelector("audioHe").play();
+      document.querySelector("audio").play();
 let playAttempt = setInterval(() => {
   audioHe
     .play()
