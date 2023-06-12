@@ -218,17 +218,11 @@ w/8BCHSWA6nGMtEAAAAASUVORK5CYII=
         "&tl=he";
       audioHe.crossorigin="anonymous";
       audioHe.controls="controls";
+      audioHe.muted = true; 
       var resp = audioHe.play();
 
-      if (resp!== undefined) {
-        resp.then(_ => {
-        // autoplay starts!
-        audioHe.play();
-        }).catch(error => {
-       //show error
-                  audioHe.play();
+      if (resp === undefined) {
 
-        });
                   audioHe.play();
 
       }
